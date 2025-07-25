@@ -1,0 +1,44 @@
+---
+import { Toggle } from 'astro-theme-toggle'
+
+const links = [
+  { href: "/", label: "HOME" },
+  { href: "/blog", label: "BLOG" },
+  { href: "/about", label: "ABOUT" },
+];
+
+// Get current page URL
+const currentUrl = Astro.url.pathname;
+const isActive = (href: string) => currentUrl === href;
+// Define a class for active links
+const activeClass =
+  "font-bold";
+const inactiveClass =
+  "font-bold text-gray-500 hover:text-gray-700 transition ease-in-out duration-200";
+// Apply active class conditionally
+const getLinkClass = (href: string) =>
+  isActive(href) ? activeClass : inactiveClass;
+---
+
+<div class="flex items-center max-w-screen-md mx-auto px-4 py-8">
+  <div class="flex-1">
+    <a class="text-xl" href="/">LOGO</a>
+  </div>
+  <div class="flex-none">
+    <ul class="flex flex-row gap-8">
+      {
+        links.map((link) => (
+          <li>
+            <a class={getLinkClass(link.href)} href={link.href}>
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+      <li class="flex items-center text-gray-500 hover:text-gray-700 transition ease-in-out duration-200">
+        <Toggle style="width: 18px; height: 18px;" />
+      </li>
+    </ul>
+  </div>
+</div>
+

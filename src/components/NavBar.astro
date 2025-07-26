@@ -1,5 +1,5 @@
 ---
-import { Toggle } from 'astro-theme-toggle'
+import { Toggle } from "astro-theme-toggle";
 
 const links = [
   { href: "/blog", label: "Blog" },
@@ -10,8 +10,7 @@ const links = [
 const currentUrl = Astro.url.pathname;
 const isActive = (href: string) => currentUrl === href;
 // Define a class for active links
-const activeClass =
-  "text-(--primary-color)";
+const activeClass = "text-(--primary-color)";
 const inactiveClass =
   "hover:text-(--primary-color) transition ease-in-out duration-200";
 // Apply active class conditionally
@@ -40,4 +39,3 @@ const getLinkClass = (href: string) =>
     </ul>
   </div>
 </div>
-

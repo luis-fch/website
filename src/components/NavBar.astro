@@ -2,9 +2,8 @@
 import { Toggle } from 'astro-theme-toggle'
 
 const links = [
-  { href: "/", label: "HOME" },
-  { href: "/blog", label: "BLOG" },
-  { href: "/about", label: "ABOUT" },
+  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
 ];
 
 // Get current page URL
@@ -12,17 +11,17 @@ const currentUrl = Astro.url.pathname;
 const isActive = (href: string) => currentUrl === href;
 // Define a class for active links
 const activeClass =
-  "font-bold";
+  "text-(--primary-color)";
 const inactiveClass =
-  "font-bold text-gray-500 hover:text-gray-700 transition ease-in-out duration-200";
+  "hover:text-(--primary-color) transition ease-in-out duration-200";
 // Apply active class conditionally
 const getLinkClass = (href: string) =>
   isActive(href) ? activeClass : inactiveClass;
 ---
 
-<div class="flex items-center max-w-screen-md mx-auto px-4 py-8">
+<div class="flex items-center max-w-screen-md mx-auto px-4 py-8 text-xl">
   <div class="flex-1">
-    <a class="text-xl" href="/">LOGO</a>
+    <a class="text-xl" href="/">LF</a>
   </div>
   <div class="flex-none">
     <ul class="flex flex-row gap-8">
@@ -35,8 +34,8 @@ const getLinkClass = (href: string) =>
           </li>
         ))
       }
-      <li class="flex items-center text-gray-500 hover:text-gray-700 transition ease-in-out duration-200">
-        <Toggle style="width: 18px; height: 18px;" />
+      <li class="flex items-center">
+        <Toggle style="width: 24px; height: 24px;" />
       </li>
     </ul>
   </div>

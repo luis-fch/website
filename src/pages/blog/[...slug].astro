@@ -1,0 +1,22 @@
+---
+import HomeLayout from "../../layouts/HomeLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<HomeLayout>
+  <main class="max-w-screen-md mx-auto px-4 py-12 my-8">
+    <div class="">
+      <Content />
+    </div>
+  </main>
+</HomeLayout>

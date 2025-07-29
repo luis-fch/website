@@ -2,13 +2,11 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 :root {
-  --primary-color: #2b6cb0;
   background-color: #fff;
 }
 
 .dark {
-  --primary-color: #bfdbf7;
-  background-color: #010400;
+  background-color: #1e1e2e;
 }
 
 [data-theme="dark"] .astro-code,

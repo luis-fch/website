@@ -1,5 +1,11 @@
 ---
-const { title, description, published_date, id } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  published_date: string;
+  id: string;
+}
+const { title, description, published_date, id } = Astro.props as Props;
 ---
 
 <a href={`/blog/${id}`} class="py-2 group">

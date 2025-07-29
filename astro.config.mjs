@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 import mdx from '@astrojs/mdx';
+import { rehypeHeadingIds } from '@astrojs/markdown-remark';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 import node from '@astrojs/node';
 
@@ -16,5 +18,25 @@ export default defineConfig({
 
   adapter: node({
     mode: 'standalone'
-  })
+  }),
+
+  markdown: {
+    rehypePlugins: [
+      rehypeHeadingIds,
+      [rehypeAutolinkHeadings, { behavior: 'wrap' }]
+    ],
+    shikiConfig: {
+      themes: {
+        light: 'catppuccin-latte',
+        dark: 'catppuccin-frappe',
+      },
+      wrap: true,
+    },
+    syntaxHighlight: 'shiki',
+    gfm: true,
+    smartypants: true,
+  },
+  prefetch: {
+    prefetchAll: true
+  }
 });

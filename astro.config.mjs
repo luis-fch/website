@@ -36,4 +36,7 @@ export default defineConfig({
     gfm: true,
     smartypants: true,
   },
+  prefetch: {
+    prefetchAll: true
+  }
 });

@@ -13,8 +13,8 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<HomeLayout>
-  <main class="max-w-screen-md mx-auto px-4 py-12 my-8">
+<HomeLayout title={`${post.data.title}`}>
+  <main class="px-4 py-12 my-8">
     <div class="">
       <Content />
     </div>

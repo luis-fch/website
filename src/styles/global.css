@@ -31,25 +31,16 @@
   @apply text-4xl font-bold my-4;
 }
 
-.blog-content h3 {
-  @apply text-3xl font-semibold my-4;
-}
-
+.blog-content h3,
 .blog-content h4 {
   @apply text-3xl font-semibold my-4;
 }
 
-.blog-content h5 {
-  @apply text-3xl font-medium my-4;
-}
-
+.blog-content h5,
 .blog-content h6 {
   @apply text-3xl font-medium my-4;
 }
 
-.blog-content a[href^="#"] {
-  @apply hover:underline;
-}
 
 /* Lists */
 .blog-content ul {
@@ -95,10 +86,16 @@
 }
 
 /* Links */
-.blog-content a[href^="http"],
+.blog-content a[href^="#"] {
+  @apply hover:underline;
+}
+
+.blog-content a[href^="http"] {
+  @apply underline;
+}
+
 .blog-content a[href^="http"]::after {
   content: " ↗";
-  @apply underline;
 }
 
 .blog-content a[href^="/"] {

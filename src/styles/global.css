@@ -3,6 +3,7 @@
 
 :root {
   background-color: #fff;
+  scroll-behavior: smooth;
 }
 
 .dark {

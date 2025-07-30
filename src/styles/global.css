@@ -41,9 +41,6 @@
   @apply text-3xl font-medium my-4;
 }
 
-.blog-content a[href^="#"] {
-  @apply hover:underline;
-}
 
 /* Lists */
 .blog-content ul {
@@ -89,10 +86,16 @@
 }
 
 /* Links */
-.blog-content a[href^="http"],
+.blog-content a[href^="#"] {
+  @apply hover:underline;
+}
+
+.blog-content a[href^="http"] {
+  @apply underline;
+}
+
 .blog-content a[href^="http"]::after {
   content: " ↗";
-  @apply underline;
 }
 
 .blog-content a[href^="/"] {

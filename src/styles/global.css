@@ -19,7 +19,7 @@
 
 /* Blog specific styles */
 .blog-content p {
-  @apply text-2xl font-normal;
+  @apply text-2xl font-normal my-4 text-justify;
 }
 
 /* Headings */
@@ -69,6 +69,9 @@
 .blog-content pre {
   @apply p-4 my-4 rounded-lg;
 }
+.blog-content code {
+  @apply text-xl;
+}
 
 /* Tables */
 .blog-content table {
@@ -82,7 +85,7 @@
 
 /* Images */
 .blog-content img {
-  @apply max-w-full h-auto my-4 rounded-lg;
+  @apply max-w-full h-auto my-4 rounded-lg mx-auto;
 }
 
 /* Links */

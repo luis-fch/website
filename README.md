@@ -1,6 +1,6 @@
 # luis-fch
 
-My own website! Really simple and minimalistic I would say. I intend to expand it with other features in the near future, and hopefully use it as a portfolio when I get real life work experience.
+My own website! Really simple and minimalistic I would say. I intend to expand it with other features in the near future, and hopefully use it as a portfolio when I get real-world work experience.
 
 ## Usage
 

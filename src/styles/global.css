@@ -19,7 +19,7 @@
 
 /* Blog specific styles */
 .blog-content p {
-  @apply text-2xl font-normal;
+  @apply text-2xl font-normal my-4 text-justify;
 }
 
 /* Headings */
@@ -68,6 +68,9 @@
 /* The code block styles are applied by shiki */
 .blog-content pre {
   @apply p-4 my-4 rounded-lg;
+}
+.blog-content code {
+  @apply text-xl;
 }
 
 /* Tables */

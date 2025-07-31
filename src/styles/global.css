@@ -85,7 +85,7 @@
 
 /* Images */
 .blog-content img {
-  @apply max-w-full h-auto my-4 rounded-lg m-auto;
+  @apply max-w-full h-auto my-4 rounded-lg mx-auto;
 }
 
 /* Links */

@@ -54,4 +54,4 @@ With the framework ready, I needed to add my own style to the website, and for t
 
 ## Future plans
 
-As for the overall website, I want to add a projects or portfolio section of some sort once I get to do some real-world work. And as for the blog, I do really want to keep adding entries once in a while, wether it is talking about stuff that I find interesting or side projects that I do.
+As for the overall website, I want to add a projects or portfolio section of some sort once I get to do some real-world work. And as for the blog, I do really want to keep adding entries once in a while, whether it is talking about stuff that I find interesting or side projects that I do.

@@ -5,7 +5,7 @@ author: "Luis Fonseca"
 published_date: "07-30-2025"
 ---
 
-# Hello world!
+# Hello world
 
 Hello world, this is my first ever blog post! I hope there are many more to come with more interesting topics, but for now I would like to talk about why I decided to make this website and how I did it.
 

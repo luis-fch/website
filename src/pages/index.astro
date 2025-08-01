@@ -6,8 +6,8 @@ import HomeLayout from "../layouts/HomeLayout.astro";
 
 <HomeLayout title="Home">
 	<main class="px-4 py-12 my-8">
-		<h1 class="text-6xl font-bold mb-8">Hello there 👋</h1>
-		<p class="text-2xl">
+		<h1 class="text-3xl font-bold mb-8">Hello there 👋</h1>
+		<p class="text-lg">
 			I'm Luis Fonseca, a computer science student at <a
 				class="underline"
 				href="https://www.ucr.ac.cr"
@@ -17,11 +17,12 @@ import HomeLayout from "../layouts/HomeLayout.astro";
 		</p>
 	</main>
 	<footer class="text-center">
-		<p class="flex justify-center gap-4">
+		<nav class="flex justify-center gap-4">
 			<a
 				href="mailto:luis.fonsecachinchilla@ucr.ac.cr"
 				target="_blank"
 				rel="noopener noreferrer"
+				aria-label="Email Luis Fonseca"
 			>
 				<Mail />
 			</a>
@@ -29,9 +30,10 @@ import HomeLayout from "../layouts/HomeLayout.astro";
 				href="https://github.com/luis-fch"
 				target="_blank"
 				rel="noopener noreferrer"
+				aria-label="Luis Fonseca's GitHub"
 			>
 				<GithubIcon />
 			</a>
-		</p>
+		</nav>
 	</footer>
 </HomeLayout>

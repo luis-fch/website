@@ -2,7 +2,7 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 :root {
-  background-color: #fff;
+  background-color: #fafafa;
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
@@ -18,13 +18,23 @@ h6 {
 }
 
 .dark {
-  background-color: #000;
+  background-color: #0f1115;
 }
 
 [data-theme="dark"] .astro-code,
 [data-theme="dark"] .astro-code span {
   background-color: var(--shiki-dark-bg) !important;
   color: var(--shiki-dark) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+.astro-code,
+.astro-code span {
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
 }
 
 /* roboto-300 - latin */
@@ -173,26 +183,26 @@ h6 {
 
 /* Blog specific styles */
 .blog-content p {
-  @apply text-2xl font-normal my-4;
+  @apply text-lg font-normal my-4;
 }
 
 /* Headings */
 .blog-content h1 {
-  @apply text-6xl font-bold mb-8;
+  @apply text-3xl font-bold mb-8;
 }
 
 .blog-content h2 {
-  @apply text-4xl font-bold my-4;
+  @apply text-2xl font-bold my-4;
 }
 
 .blog-content h3,
 .blog-content h4 {
-  @apply text-3xl font-semibold my-4;
+  @apply text-xl font-semibold my-4;
 }
 
 .blog-content h5,
 .blog-content h6 {
-  @apply text-3xl font-medium my-4;
+  @apply text-lg font-medium my-4;
 }
 
 
@@ -206,7 +216,7 @@ h6 {
 }
 
 .blog-content li {
-  @apply text-xl my-0.5;
+  @apply text-base my-0.5;
 }
 
 /* Blockquotes */
@@ -215,7 +225,7 @@ h6 {
 }
 
 .blog-content blockquote p {
-  @apply text-xl font-light italic;
+  @apply text-base font-light italic;
 }
 
 /* Code */
@@ -225,12 +235,12 @@ h6 {
 }
 
 .blog-content code {
-  @apply text-lg;
+  @apply text-base;
   font-family: 'JetBrains Mono', monospace;
 }
 
 .blog-content pre code {
-  @apply text-base;
+  @apply text-sm;
   font-family: 'JetBrains Mono', monospace;
 }
 

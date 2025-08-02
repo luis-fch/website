@@ -15,8 +15,32 @@ const { Content } = await render(post);
 
 <HomeLayout title={`${post.data.title}`}>
   <main class="px-4 py-12 my-8">
-    <article class="blog-content">
-      <Content />
+    <article>
+      <section>
+        <h1 class="text-3xl font-bold mb-0">{post.data.title}</h1>
+        <div class="flex align-text-top gap-3 dark:text-white/60 text-black/60 text-base">
+          <span>
+            {
+              post.data.published_date.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            }</span
+          >
+          <span class="font-bold">▪</span>
+          <span>
+            {
+              post.data.reading_time
+                ? `${post.data.reading_time} min read`
+                : "-"
+            }</span
+          >
+        </div>
+      </section>
+      <section class="blog-content">
+        <Content />
+      </section>
     </article>
   </main>
 </HomeLayout>

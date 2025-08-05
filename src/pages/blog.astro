@@ -4,19 +4,22 @@ import HomeLayout from "../layouts/HomeLayout.astro";
 import BlogCard from "../components/BlogCard.astro";
 
 const posts = await getCollection("blog");
+const recentPostsCount = 3;
+
 const sortedPosts = posts.sort(
   (a, b) =>
     new Date(b.data.published_date).getTime() -
     new Date(a.data.published_date).getTime(),
 );
+const recentPosts = sortedPosts.slice(0, recentPostsCount);
 ---
 
 <HomeLayout title="Blog">
   <main class="px-4 py-12 my-8">
-    <h1 class="text-3xl font-bold mb-8">Blog</h1>
+    <h1 class="text-3xl font-bold mb-8">Recent blog posts</h1>
     <div class="grid gap-2">
       {
-        sortedPosts.map((post) => (
+        recentPosts.map((post) => (
           <BlogCard
             title={post.data.title}
             description={post.data.description}
@@ -33,5 +36,12 @@ const sortedPosts = posts.sort(
         ))
       }
     </div>
+    {
+      sortedPosts.length > recentPostsCount ? (
+        <span class="my-2 flex justify-end text-sm font-bold underline">
+          <a href="/blog/all">See all blog posts</a>
+        </span>
+      ) : null
+    }
   </main>
 </HomeLayout>

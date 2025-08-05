@@ -32,7 +32,7 @@ export default defineConfig({
         light: 'catppuccin-latte',
         dark: 'catppuccin-mocha',
       },
-      wrap: true,
+      wrap: false,
     },
     syntaxHighlight: 'shiki',
     gfm: true,

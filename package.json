@@ -1,6 +1,6 @@
 {
-  "name": "portfolio",
-  "version": "0.0.1",
+  "name": "luisfch-website",
+  "version": "1.4.0",
   "dependencies": {
     "@astrojs/mdx": "4.3.5",
     "@astrojs/node": "9.4.3",

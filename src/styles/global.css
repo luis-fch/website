@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
+
 :root {
-  background-color: #fafafa;
+  background-color: #fff;
+  --anchor-color: #c6474d;
+  /* color: #5b2333; */
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -99,12 +102,16 @@
 }
 
 /* Links */
+a, a h2{
+  text-decoration-color: var(--anchor-color);
+}
+
 .blog-content a[href^="#"] {
   @apply hover:underline;
 }
 
 .blog-content a[href^="http"] {
-  @apply underline;
+  @apply underline text-[var(--anchor-color)];
 }
 
 .blog-content a[href^="http"]::after {

@@ -74,7 +74,7 @@
 /* Code */
 /* The code block styles are applied by shiki */
 .blog-content pre {
-  @apply p-3 my-4 rounded-lg;
+  @apply p-3 my-4 rounded-lg border-2 border-site-primary;
 }
 
 .blog-content code {
@@ -109,7 +109,7 @@
 }
 
 .blog-content a[href^="http"] {
-  @apply underline text-site-primary;
+  @apply underline decoration-site-primary;
 }
 
 .blog-content a[href^="http"]::after {
@@ -117,5 +117,5 @@
 }
 
 .blog-content a[href^="/"] {
-  @apply underline text-site-primary;
+  @apply underline decoration-site-primary;
 }

@@ -29,7 +29,7 @@ export default defineConfig({
     ],
     shikiConfig: {
       themes: {
-        light: 'catppuccin-latte',
+        light: 'github-light',
       },
       wrap: false,
     },

@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --color-site-primary: #c6474d;
+}
+
 :root {
-  background-color: #fafafa;
+  background-color: #fff;
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -70,7 +74,7 @@
 /* Code */
 /* The code block styles are applied by shiki */
 .blog-content pre {
-  @apply p-3 my-4 rounded-lg;
+  @apply p-3 my-4 rounded-lg border-2 border-site-primary;
 }
 
 .blog-content code {
@@ -99,12 +103,13 @@
 }
 
 /* Links */
-.blog-content a[href^="#"] {
-  @apply hover:underline;
+.blog-content a[href^="#"]::before {
+  @apply text-site-primary;
+  content: '# ';
 }
 
 .blog-content a[href^="http"] {
-  @apply underline;
+  @apply underline decoration-site-primary;
 }
 
 .blog-content a[href^="http"]::after {
@@ -112,5 +117,5 @@
 }
 
 .blog-content a[href^="/"] {
-  @apply underline;
+  @apply underline decoration-site-primary;
 }

@@ -7,13 +7,6 @@
   font-family: 'Plus Jakarta Sans', sans;
 }
 
-.astro-code,
-.astro-code span {
-  font-style: var(--shiki-dark-font-style) !important;
-  font-weight: var(--shiki-dark-font-weight) !important;
-  text-decoration: var(--shiki-dark-text-decoration) !important;
-}
-
 @font-face {
   font-display: swap;
   font-family: 'Plus Jakarta Sans';

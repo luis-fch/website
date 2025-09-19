@@ -10,17 +10,15 @@ const links = [
   <div class="flex-1">
     <a href="/" aria-label="Home page">LF</a>
   </div>
-  <div class="flex-none">
     <ul class="flex flex-row gap-8">
       {
         links.map((link) => (
           <li>
-            <a class="hover:underline" href={link.href} aria-label={link.aria}>
+            <a class="underline decoration-site-primary" href={link.href} aria-label={link.aria}>
               {link.label}
             </a>
           </li>
         ))
       }
     </ul>
-  </div>
 </nav>

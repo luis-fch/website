@@ -1,24 +1,26 @@
 ---
 import { Toggle } from "astro-theme-toggle";
 
-const links = [
-  { href: "/blog", label: "blog", aria: "Blog page" },
-];
+const links = [{ href: "/blog", label: "blog", aria: "Blog page" }];
 ---
 
 <nav class="flex items-center px-4 py-4 text-lg">
   <div class="flex-1">
     <a href="/" aria-label="Home page">LF</a>
   </div>
-    <ul class="flex flex-row gap-8">
-      {
-        links.map((link) => (
-          <li>
-            <a class="underline decoration-site-primary" href={link.href} aria-label={link.aria}>
-              {link.label}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+  <ul class="flex flex-row gap-8">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            class="underline decoration-site-primary"
+            href={link.href}
+            aria-label={link.aria}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </nav>

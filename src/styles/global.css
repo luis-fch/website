@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --color-site-primary: #c6474d;
+}
 
 :root {
   background-color: #fff;
-  --anchor-color: #c6474d;
-  /* color: #5b2333; */
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -102,16 +103,13 @@
 }
 
 /* Links */
-a, a h2{
-  text-decoration-color: var(--anchor-color);
-}
-
-.blog-content a[href^="#"] {
-  @apply hover:underline;
+.blog-content a[href^="#"]::before {
+  @apply text-site-primary;
+  content: '# ';
 }
 
 .blog-content a[href^="http"] {
-  @apply underline text-[var(--anchor-color)];
+  @apply underline text-site-primary;
 }
 
 .blog-content a[href^="http"]::after {
@@ -119,5 +117,5 @@ a, a h2{
 }
 
 .blog-content a[href^="/"] {
-  @apply underline;
+  @apply underline text-site-primary;
 }

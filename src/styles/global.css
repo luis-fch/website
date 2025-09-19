@@ -36,8 +36,8 @@ p {
   font-display: swap;
   font-family: 'Plus Jakarta Sans';
   font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/PlusJakartaSans-Regular.woff2') format('woff2');
+  font-weight: 300, 400, 600, 700;
+  src: url('/fonts/PlusJakartaSans-Variable.woff2') format('woff2');
 }
 
 /* jetbrains-mono-regular - latin */

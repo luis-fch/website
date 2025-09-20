@@ -1,0 +1,21 @@
+---
+import { getLangFromUrl } from "../i18n/utils";
+import { languages } from "../i18n/ui";
+
+// Get available language keys and current language
+const currentLang = Astro.props.currentLang;
+const langKeys = Object.keys(languages);
+const currentIndex = langKeys.indexOf(currentLang);
+const nextIndex = (currentIndex + 1) % langKeys.length;
+const otherLang = langKeys[nextIndex];
+
+// Build the new URL for the other language
+const newPath = Astro.url.pathname.replace(
+  `/${currentLang}/`,
+  `/${otherLang}/`,
+);
+---
+
+<a class="text-site-primary" href={newPath}>
+  {currentLang}
+</a>

@@ -1,17 +1,17 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import LanguagePicker from "./LanguagePicker.astro";
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const urlLang = getLangFromUrl(Astro.url);
+const t = useTranslations(urlLang);
 
 const links = [
   {
-    href: `/${lang}/`,
+    href: `/${urlLang}/`,
     label: t("nav.a.home.label"),
     aria: t("nav.a.home.aria"),
   },
   {
-    href: `/${lang}/blog`,
+    href: `/${urlLang}/blog`,
     label: t("nav.a.blog.label"),
     aria: t("nav.a.blog.aria"),
   },
@@ -35,6 +35,6 @@ const links = [
     }
   </ul>
   <div class="">
-    <LanguagePicker currentLang={lang} />
+    <LanguagePicker currentLang={urlLang} />
   </div>
 </nav>

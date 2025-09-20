@@ -1,9 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import HomeLayout from "../layouts/HomeLayout.astro";
-import BlogCard from "../components/BlogCard.astro";
+import { getLangFromUrl } from "../../i18n/utils";
+import HomeLayout from "../../layouts/HomeLayout.astro";
+import BlogCard from "../../components/BlogCard.astro";
 
-const posts = await getCollection("blog");
+const lang = getLangFromUrl(Astro.url);
+const allPosts = await getCollection("blog");
+const posts = allPosts.filter((post) => post.id.startsWith(`${lang}`));
 const recentPostsCount = 3;
 
 const sortedPosts = posts.sort(
@@ -36,12 +39,12 @@ const recentPosts = sortedPosts.slice(0, recentPostsCount);
         ))
       }
     </div>
-    {
+    <!-- {
       sortedPosts.length > recentPostsCount ? (
         <span class="my-2 flex justify-end text-sm font-bold underline">
           <a href="/blog/all">See all blog posts</a>
         </span>
       ) : null
-    }
+    } -->
   </main>
 </HomeLayout>

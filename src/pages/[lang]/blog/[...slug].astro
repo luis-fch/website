@@ -1,15 +1,20 @@
 ---
-import HomeLayout from "../../layouts/HomeLayout.astro";
 import { getCollection, render } from "astro:content";
+import HomeLayout from "../../../layouts/HomeLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+
+  const paths = posts.map((post) => {
+    const [lang, ...slug] = post.id.split("/");
+    return { params: { lang, slug: slug.join("/") || undefined }, props: post };
+  });
+
+  return paths;
 }
-const { post } = Astro.props;
+
+const { lang, slug } = Astro.params;
+const post = Astro.props;
 const { Content } = await render(post);
 ---
 
@@ -21,18 +26,18 @@ const { Content } = await render(post);
         <div class="flex gap-3 text-base text-current/60">
           <span>
             {
-              post.data.published_date.toLocaleDateString("en-US", {
+              post.data.published_date.toLocaleDateString(lang, {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
               })
             }</span
           >
-          <span class="font-bold">▪</span>
+          <span class="font-bold">•</span>
           <span>
             {
               post.data.reading_time
-                ? `${post.data.reading_time} min read`
+                ? `${post.data.reading_time} min`
                 : "-"
             }</span
           >

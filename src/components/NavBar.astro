@@ -1,12 +1,17 @@
 ---
-const links = [{ href: "/blog", label: "blog", aria: "Blog page" }];
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import LanguagePicker from "./LanguagePicker.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const links = [
+  { href: `/${lang}/`, label: t("nav.home"), aria: t("nav.home.aria") },
+  { href: `/${lang}/blog`, label: t("nav.blog"), aria: t("nav.blog.aria") },
+];
 ---
 
 <nav class="flex items-center px-4 py-4 text-lg">
-  <div class="flex-1">
-    <a href="/" aria-label="Home page">LF</a>
-  </div>
-  <ul class="flex flex-row gap-8">
+  <ul class="flex flex-1 flex-row gap-4">
     {
       links.map((link) => (
         <li>
@@ -21,4 +26,7 @@ const links = [{ href: "/blog", label: "blog", aria: "Blog page" }];
       ))
     }
   </ul>
+  <div class="">
+    <LanguagePicker currentLang={lang} />
+  </div>
 </nav>

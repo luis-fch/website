@@ -1,0 +1,39 @@
+---
+import GithubIcon from "@lucide/astro/icons/github";
+import Mail from "@lucide/astro/icons/mail";
+import HomeLayout from "../../layouts/HomeLayout.astro";
+---
+
+<HomeLayout title="Inicio">
+	<main class="px-4 py-12 my-8">
+		<h1 class="text-3xl font-bold mb-8">¡Hola! 👋🏼</h1>
+		<p class="text-lg">
+			Soy Luis Fonseca, estudiante de ciencias de la computación en la <a
+				class="underline decoration-site-primary"
+				href="https://www.ucr.ac.cr"
+				target="_blank"
+				rel="noopener noreferrer">Universidad de Costa Rica.</a
+			>
+		</p>
+	</main>
+	<footer>
+		<nav class="flex justify-center gap-4">
+			<a
+				href="mailto:luis.fonsecachinchilla@ucr.ac.cr"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="Mi correo electrónico"
+			>
+				<Mail />
+			</a>
+			<a
+				href="https://github.com/luis-fch"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="Enlace a mi GitHub"
+			>
+				<GithubIcon />
+			</a>
+		</nav>
+	</footer>
+</HomeLayout>

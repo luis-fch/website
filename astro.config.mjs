@@ -13,6 +13,14 @@ import node from '@astrojs/node';
 export default defineConfig({
   integrations: [mdx()],
 
+  i18n: {
+    locales: ['en', 'es'],
+    defaultLocale: 'en',
+    routing: {
+      prefixDefaultLocale: true
+    }
+  },
+
   vite: {
     plugins: [tailwindcss()]
   },

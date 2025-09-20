@@ -1,5 +1,11 @@
 ---
-const links = [{ href: "/blog", label: "blog", aria: "Blog page" }];
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const links = [
+  { href: `/${lang}/blog`, label: t("nav.blog"), aria: t("nav.blog.aria") },
+];
 ---
 
 <nav class="flex items-center px-4 py-4 text-lg">

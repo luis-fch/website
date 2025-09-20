@@ -1,15 +1,18 @@
 ---
-import HomeLayout from "../../layouts/HomeLayout.astro";
+import HomeLayout from "../../../layouts/HomeLayout.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+  const paths = posts.map((post) => {
+    const [lang, ...slug] = post.id.split("/");
+    return { params: { lang, slug: slug.join("/") || undefined }, props: post };
+  });
+  return paths;
 }
-const { post } = Astro.props;
+const { lang, slug } = Astro.params;
+const post = Astro.props;
+const formattedDate = post.data.published_date.toLocaleString(lang);
 const { Content } = await render(post);
 ---
 

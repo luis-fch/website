@@ -13,3 +13,10 @@ export function useTranslations(lang: keyof typeof ui) {
     return ui[lang][key] || ui[defaultLanguage][key];
   }
 }
+
+export function getLanguageStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "es" } },
+  ];
+}

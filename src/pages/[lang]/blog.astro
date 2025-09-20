@@ -1,25 +1,36 @@
 ---
 import { getCollection } from "astro:content";
-import { getLangFromUrl } from "../../i18n/utils";
+import {
+  getLangFromUrl,
+  useTranslations,
+  getLanguageStaticPaths,
+} from "../../i18n/utils";
 import HomeLayout from "../../layouts/HomeLayout.astro";
 import BlogCard from "../../components/BlogCard.astro";
 
-const lang = getLangFromUrl(Astro.url);
-const allPosts = await getCollection("blog");
-const posts = allPosts.filter((post) => post.id.startsWith(`${lang}`));
-const recentPostsCount = 3;
+const urlLang = getLangFromUrl(Astro.url);
+const t = useTranslations(urlLang);
 
+export async function getStaticPaths() {
+  return getLanguageStaticPaths();
+}
+
+const allPosts = await getCollection("blog");
+const posts = allPosts.filter((post) => post.id.startsWith(`${urlLang}`));
+
+const recentPostsCount = 3;
 const sortedPosts = posts.sort(
   (a, b) =>
     new Date(b.data.published_date).getTime() -
     new Date(a.data.published_date).getTime(),
 );
 const recentPosts = sortedPosts.slice(0, recentPostsCount);
+const { lang } = Astro.params;
 ---
 
-<HomeLayout title="Blog">
+<HomeLayout title={t("blog.head.title")}>
   <main class="px-4 py-12 my-8">
-    <h1 class="text-3xl font-bold mb-8">Recent blog posts</h1>
+    <h1 class="text-3xl font-bold mb-8">{t("blog.h1.recent")}</h1>
     <div class="grid gap-2">
       {
         recentPosts.map((post) => (
@@ -27,7 +38,7 @@ const recentPosts = sortedPosts.slice(0, recentPostsCount);
             title={post.data.title}
             description={post.data.description}
             published_date={post.data.published_date.toLocaleDateString(
-              "en-US",
+              urlLang,
               {
                 year: "numeric",
                 month: "long",

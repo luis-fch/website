@@ -1,18 +1,32 @@
 ---
+import {
+	getLangFromUrl,
+	useTranslations,
+	getLanguageStaticPaths,
+} from "../../i18n/utils";
+
 import GithubIcon from "@lucide/astro/icons/github";
 import Mail from "@lucide/astro/icons/mail";
 import HomeLayout from "../../layouts/HomeLayout.astro";
+
+const urlLang = getLangFromUrl(Astro.url);
+const t = useTranslations(urlLang);
+
+export async function getStaticPaths() {
+	return getLanguageStaticPaths();
+}
 ---
 
-<HomeLayout title="Home">
+<HomeLayout title={t("index.head.title")}>
 	<main class="px-4 py-12 my-8">
-		<h1 class="text-3xl font-bold mb-8">Hello there 👋🏼</h1>
+		<h1 class="text-3xl font-bold mb-8">{t("index.h1.greeting")}</h1>
 		<p class="text-lg">
-			I'm Luis Fonseca, a computer science student at the <a
+			{t("index.p.description")}
+			<a
 				class="underline decoration-site-primary"
 				href="https://www.ucr.ac.cr"
 				target="_blank"
-				rel="noopener noreferrer">University of Costa Rica.</a
+				rel="noopener noreferrer">{t("index.p.university")}</a
 			>
 		</p>
 	</main>

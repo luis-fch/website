@@ -6,7 +6,7 @@ published_date: "07-30-2025"
 reading_time: 2
 ---
 
-¡Hola mundo!, este es mi primer blog. Espero poder escribir más en el futuro sobre temas que me parescan interesantes. Por ahora, para este primer artículo me gustaría hablar sobre el porqué quise hacer esta página y el framework que usé.
+¡Hola mundo!, este es mi primer blog. Espero poder escribir más en el futuro sobre temas que me parezcan interesantes. Por ahora, para este primer artículo me gustaría hablar sobre el porqué quise hacer esta página y el framework que usé.
 
 ## Motivación
 
@@ -49,7 +49,7 @@ También tienen un tutorial sobre cómo hacer un blog, aunque no le presté much
 
 ### Personalización
 
-Con el *framework* listo, necesitaba agregar mi propio estilo al sitio web, y para eso terminé usando [Tailwind](https://tailwindcss.com). Como podran notar, no es como que le haya prestado mucha atención al asunto, y eso es porque sé que puedo ser muy exigente con el diseño y la apariencia general de las cosas que hago. Por eso decidí mantenerlo simple y minimalista por el momento.
+Con el *framework* listo, necesitaba agregar mi propio estilo al sitio web, y para eso terminé usando [Tailwind](https://tailwindcss.com). Como podrán notar, no es como que le haya prestado mucha atención al asunto, y eso es porque sé que puedo ser muy exigente con el diseño y la apariencia general de las cosas que hago. Por eso decidí mantenerlo simple y minimalista por el momento.
 
 ## Planes a futuro
 

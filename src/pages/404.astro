@@ -1,0 +1,7 @@
+---
+import { getLangFromUrl } from "../i18n/utils";
+const langUrl = getLangFromUrl(Astro.url);
+export const prerender = false;
+
+return Astro.redirect(`/${langUrl}/404`);
+---

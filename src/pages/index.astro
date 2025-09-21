@@ -1,4 +1,5 @@
 ---
+import { defaultLanguage } from "../i18n/ui";
 export const prerender = false
-return Astro.redirect('/en/');
+return Astro.redirect(`/${defaultLanguage}/`);
 ---

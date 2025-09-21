@@ -4,11 +4,11 @@ import { getLangFromUrl } from "../i18n/utils";
 import NavBar from "../components/NavBar.astro";
 import "../styles/global.css";
 
-const lang = getLangFromUrl(Astro.url);
+const urlLang = getLangFromUrl(Astro.url);
 const { title } = Astro.props;
 ---
 
-<html lang={lang}>
+<html lang={urlLang}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />

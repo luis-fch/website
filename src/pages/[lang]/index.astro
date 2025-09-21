@@ -1,18 +1,32 @@
 ---
+import {
+	getLangFromUrl,
+	useTranslations,
+	getLanguageStaticPaths,
+} from "../../i18n/utils";
+
 import GithubIcon from "@lucide/astro/icons/github";
 import Mail from "@lucide/astro/icons/mail";
 import HomeLayout from "../../layouts/HomeLayout.astro";
+
+const urlLang = getLangFromUrl(Astro.url);
+const t = useTranslations(urlLang);
+
+export async function getStaticPaths() {
+	return getLanguageStaticPaths();
+}
 ---
 
-<HomeLayout title="Inicio">
+<HomeLayout title={t("index.head.title")}>
 	<main class="px-4 py-12 my-8">
-		<h1 class="text-3xl font-bold mb-8">¡Hola! 👋🏼</h1>
+		<h1 class="text-3xl font-bold mb-8">{t("index.h1.greeting")}</h1>
 		<p class="text-lg">
-			Soy Luis Fonseca, estudiante de ciencias de la computación en la <a
+			{t("index.p.description")}
+			<a
 				class="underline decoration-site-primary"
 				href="https://www.ucr.ac.cr"
 				target="_blank"
-				rel="noopener noreferrer">Universidad de Costa Rica.</a
+				rel="noopener noreferrer">{t("index.p.university")}</a
 			>
 		</p>
 	</main>
@@ -22,7 +36,7 @@ import HomeLayout from "../../layouts/HomeLayout.astro";
 				href="mailto:luis.fonsecachinchilla@ucr.ac.cr"
 				target="_blank"
 				rel="noopener noreferrer"
-				aria-label="Mi correo electrónico"
+				aria-label="Email Luis Fonseca"
 			>
 				<Mail />
 			</a>
@@ -30,7 +44,7 @@ import HomeLayout from "../../layouts/HomeLayout.astro";
 				href="https://github.com/luis-fch"
 				target="_blank"
 				rel="noopener noreferrer"
-				aria-label="Enlace a mi GitHub"
+				aria-label="Luis Fonseca's GitHub"
 			>
 				<GithubIcon />
 			</a>

@@ -1,4 +1,4 @@
-import { ui, defaultLanguage } from "./ui";
+import { ui, defaultLanguage, languages } from "./ui";
 
 export function getLangFromUrl(url: URL) {
   const [, lang] = url.pathname.split("/");
@@ -15,8 +15,5 @@ export function useTranslations(lang: keyof typeof ui) {
 }
 
 export function getLanguageStaticPaths() {
-  return [
-    { params: { lang: defaultLanguage } },
-    { params: { lang: "es" } },
-  ];
+  return Object.keys(languages).map(lang => ({ params: { lang } }));
 }

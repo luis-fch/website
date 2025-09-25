@@ -6,7 +6,7 @@ import {
   getLanguageStaticPaths,
 } from "../../i18n/utils";
 import HomeLayout from "../../layouts/HomeLayout.astro";
-import BlogCard from "../../components/BlogCard.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
 
 const urlLang = getLangFromUrl(Astro.url);
 const t = useTranslations(urlLang);
@@ -16,7 +16,9 @@ export async function getStaticPaths() {
 }
 
 const allProjects = await getCollection("projects");
-const projects = allProjects.filter((project) => project.id.startsWith(`${urlLang}`));
+const projects = allProjects.filter((project) =>
+  project.id.startsWith(`${urlLang}`),
+);
 
 // For now I'll show all projects in the same page
 const sortedProjects = projects.sort(
@@ -32,11 +34,14 @@ const sortedProjects = projects.sort(
     <div class="grid gap-2">
       {
         sortedProjects.map((project) => (
-        // TODO: Add project card component
-        <p>{project.data.title}</p>
+          <ProjectCard
+            title={project.data.title}
+            description={project.data.description}
+            tags={project.data.tags}
+            id={project.id}
+          />
         ))
       }
     </div>
   </main>
 </HomeLayout>
-

@@ -127,4 +127,14 @@ Finally, in the last delivery we incorporated a simple web interface using Flask
 
 #### Screenshots
 
-<!-- TODO: Add screenshots later in the repo -->
+![image](https://github.com/user-attachments/assets/80a776bf-69d3-4b63-b354-6626f740fd4e)
+
+![image](https://github.com/user-attachments/assets/a2844d3f-7d4e-4b53-86cb-cb19d298c460)
+
+![image](https://github.com/user-attachments/assets/72be390c-16fe-429c-90a8-85b44f6c1201)
+
+![image](https://github.com/user-attachments/assets/bb6bcd01-998b-4f08-80a4-1bab39efba11)
+
+![image](https://github.com/user-attachments/assets/6efb9757-6f2c-476c-a9c1-9791fd8c5fae)
+
+![image](https://github.com/user-attachments/assets/d2a5b876-2e10-48a3-844a-0cd1661f7e4a)

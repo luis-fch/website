@@ -127,14 +127,14 @@ Finalmente, en la última entrega incorporamos una interfaz web sencilla usando 
 
 #### Capturas
 
-<img width="2450" height="1531" alt="image" src="https://github.com/user-attachments/assets/80a776bf-69d3-4b63-b354-6626f740fd4e" />
+![image](https://github.com/user-attachments/assets/80a776bf-69d3-4b63-b354-6626f740fd4e)
 
-<img width="2450" height="1542" alt="image" src="https://github.com/user-attachments/assets/a2844d3f-7d4e-4b53-86cb-cb19d298c460" />
+![image](https://github.com/user-attachments/assets/a2844d3f-7d4e-4b53-86cb-cb19d298c460)
 
-<img width="2528" height="1594" alt="image" src="https://github.com/user-attachments/assets/72be390c-16fe-429c-90a8-85b44f6c1201" />
+![image](https://github.com/user-attachments/assets/72be390c-16fe-429c-90a8-85b44f6c1201)
 
-<img width="2520" height="1594" alt="image" src="https://github.com/user-attachments/assets/bb6bcd01-998b-4f08-80a4-1bab39efba11" />
+![image](https://github.com/user-attachments/assets/bb6bcd01-998b-4f08-80a4-1bab39efba11)
 
-<img width="2457" height="1543" alt="image" src="https://github.com/user-attachments/assets/6efb9757-6f2c-476c-a9c1-9791fd8c5fae" />
+![image](https://github.com/user-attachments/assets/6efb9757-6f2c-476c-a9c1-9791fd8c5fae)
 
-<img width="2452" height="1539" alt="image" src="https://github.com/user-attachments/assets/d2a5b876-2e10-48a3-844a-0cd1661f7e4a" />
+![image](https://github.com/user-attachments/assets/d2a5b876-2e10-48a3-844a-0cd1661f7e4a)

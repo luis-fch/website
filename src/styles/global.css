@@ -99,7 +99,7 @@
 
 /* Images */
 .blog-content img {
-  @apply max-w-full h-auto my-4 rounded-lg mx-auto;
+  @apply max-w-full h-auto my-4 rounded-lg border-2 border-site-primary mx-auto;
 }
 
 /* Links */

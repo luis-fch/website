@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from "astro:content";
+import HomeLayout from "../../../layouts/HomeLayout.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  const paths = projects.map((project) => {
+    const [lang, ...slug] = project.id.split("/");
+    return {
+      params: { lang, slug: slug.join("/") || undefined },
+      props: project,
+    };
+  });
+
+  return paths;
+}
+
+const { lang, slug } = Astro.params;
+const project = Astro.props;
+const { Content } = await render(project);
+---
+
+<HomeLayout title={`${project.data.title} | Luis Fonseca`}>
+  <main class="px-4 py-12 my-8">
+    <article>
+      <section>
+        <h1 class="text-3xl font-bold">{project.data.title}</h1>
+        <div class="flex gap-1.5 text-base text-current/60">
+          {project.data.tags.map((tag) => <span>{tag}</span>)}
+        </div>
+      </section>
+      <section class="blog-content">
+        <Content />
+      </section>
+    </article>
+  </main>
+</HomeLayout>

@@ -16,6 +16,8 @@ La tarea consistió en desarrollar un analizador léxico y sintáctico para arch
 
 Para la parte del analizador léxico y sintáctico utilizamos Ply (Python Lex-Yacc), una herramienta que facilita la creación de analizadores en Python. Ply nos permitió definir reglas léxicas y gramaticales para procesar los archivos XML de MedlinePlus de forma eficiente.
 
+Para la interfaz web utilizamos Flask, un framework web para Python, junto con plantillas Jinja para renderizar dinámicamente las páginas HTML.
+
 ## Implementación
 
 El proyecto se estructuró en varias etapas según la materia vista en clase:
@@ -117,7 +119,7 @@ def p_health_topic_list(t):
 
 ### Cuarta etapa
 
-En esta entrega añadimos una estructura de datos para almacenar la información extraída. Decidimos usar un diccionario de Python para mantener los datos de forma jerárquica.
+En esta entrega añadimos una estructura de datos para almacenar la información extraída. Decidimos usar clases y diccionarios para mantener los datos de manera estructurada.
 
 ### Quinta etapa
 
